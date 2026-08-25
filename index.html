@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catastrophic infrastructure failure (fake)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            width: 100%;
+        }
+        .header {
+            padding: 60px 0 20px 0;
+        }
+        .header h1 {
+            font-size: 52px;
+            font-weight: 300;
+            color: #333;
+            letter-spacing: -0.5px;
+            margin-bottom: 30px;
+        }
+        .error-badge {
+            display: inline-block;
+            background-color: #e0e0e0;
+            color: #666;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+        .header p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 8px;
+        }
+        .header a {
+            color: #2c7bb6;
+            text-decoration: none;
+        }
+        .header a:hover {
+            text-decoration: underline;
+        }
+        .header .timestamp {
+            color: #555;
+            font-size: 16px;
+        }
+        .divider {
+            height: 1px;
+            background-color: #ddd;
+            margin: 30px 0;
+        }
+        .status-section {
+            background-color: #e8e8e8;
+            padding: 50px 0;
+            position: relative;
+        }
+        .status-section::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 20px solid #e8e8e8;
+        }
+        .status-grid {
+            display: flex;
+            justify-content: center;
+            gap: 120px;
+            flex-wrap: wrap;
+        }
+        .status-item {
+            text-align: center;
+        }
+        .icon-wrapper {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 15px;
+            position: relative;
+        }
+        .status-label {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 5px;
+        }
+        .status-service {
+            font-size: 20px;
+            color: #2c7bb6;
+            margin-bottom: 5px;
+        }
+        .status-error {
+            font-size: 24px;
+            color: #c0392b;
+            font-weight: 500;
+        }
+        .info-section {
+            padding: 60px 0;
+            flex: 1;
+        }
+        .info-grid {
+            display: flex;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+        .info-column {
+            flex: 1;
+            min-width: 300px;
+        }
+        .info-column h2 {
+            font-size: 28px;
+            font-weight: 400;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .info-column p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+        .footer {
+            border-top: 1px solid #ddd;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 13px;
+            color: #888;
+        }
+        .footer a {
+            color: #2c7bb6;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .footer .ray-id {
+            font-weight: 600;
+            color: #666;
+        }
+    </style>
+    <base target="_blank">
+</head>
+<body>
+<div class="header">
+    <div class="container">
+        <h1>Catastrophic infrastructure failure</h1>
+        <span class="error-badge">Error code 500</span>
+        <p>Visit <a href="https://cloudflare.com">cloudflare.com</a> for no help at all.</p>
+        <p class="timestamp">2026-02-07 06:24:05 UTC</p>
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="status-section">
+    <div class="container">
+        <div class="status-grid">
+            <!-- Browser -->
+            <div class="status-item">
+                <div class="icon-wrapper">
+                    <svg viewBox="0 0 100 100" width="100" height="100">
+                        <!-- Browser window -->
+                        <rect x="10" y="10" width="80" height="70" rx="4" fill="#888" stroke="#888" stroke-width="2"/>
+                        <rect x="10" y="10" width="80" height="18" rx="4" fill="#888"/>
+                        <!-- Window controls -->
+                        <circle cx="22" cy="19" r="3" fill="#aaa"/>
+                        <circle cx="32" cy="19" r="3" fill="#aaa"/>
+                        <circle cx="42" cy="19" r="3" fill="#aaa"/>
+                        <!-- Content area -->
+                        <rect x="14" y="32" width="72" height="44" fill="#ddd"/>
+                        <!-- Red X circle -->
+                        <circle cx="50" cy="72" r="18" fill="#c0392b"/>
+                        <line x1="42" y1="64" x2="58" y2="80" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                        <line x1="58" y1="64" x2="42" y2="80" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="status-label">You</div>
+                <div class="status-service">Browser</div>
+                <div class="status-error">Out of Memory</div>
+            </div>
+
+            <!-- Cloudflare -->
+            <div class="status-item">
+                <div class="icon-wrapper">
+                    <svg viewBox="0 0 100 100" width="100" height="100">
+                        <!-- Cloud -->
+                        <path d="M75 55 C85 55 92 48 92 38 C92 29 85 22 76 22 C74 14 66 8 56 8 C48 8 41 12 37 18 C35 17 32 16 29 16 C18 16 10 25 10 36 C10 47 18 55 28 55 Z"
+                              fill="#888" transform="translate(5, 5) scale(0.9)"/>
+                        <!-- Red X circle -->
+                        <circle cx="50" cy="72" r="18" fill="#c0392b"/>
+                        <line x1="42" y1="64" x2="58" y2="80" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                        <line x1="58" y1="64" x2="42" y2="80" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="status-label">Everywhere</div>
+                <div class="status-service">Cloudflare</div>
+                <div class="status-error">Error</div>
+            </div>
+
+            <!-- Host -->
+            <div class="status-item">
+                <div class="icon-wrapper">
+                    <svg viewBox="0 0 100 100" width="100" height="100">
+                        <!-- Server box -->
+                        <rect x="15" y="15" width="70" height="50" rx="3" fill="#888"/>
+                        <!-- Top lid -->
+                        <path d="M15 15 L25 5 L85 5 L75 15 Z" fill="#888"/>
+                        <!-- Side face -->
+                        <path d="M75 15 L85 5 L85 55 L75 65 Z" fill="#aaa"/>
+                        <!-- Front details -->
+                        <rect x="22" y="22" width="46" height="36" rx="2" fill="#ccc"/>
+                        <!-- Drive slot -->
+                        <rect x="28" y="28" width="34" height="8" rx="2" fill="#999"/>
+                        <!-- Indicator light -->
+                        <circle cx="68" cy="55" r="4" fill="#ccc"/>
+                        <!-- Red X circle -->
+                        <circle cx="50" cy="72" r="18" fill="#c0392b"/>
+                        <line x1="42" y1="64" x2="58" y2="80" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                        <line x1="58" y1="64" x2="42" y2="80" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="status-label">example.com</div>
+                <div class="status-service">Host</div>
+                <div class="status-error">On Fire</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="info-section">
+    <div class="container">
+        <div class="info-grid">
+            <div class="info-column">
+                <h2>What happened?</h2>
+                <p>There is a catastrophic failure.</p>
+            </div>
+            <div class="info-column">
+                <h2>What can I do?</h2>
+                <p>Please try again in a few years.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="container">
+        <p>Ray ID: <span class="ray-id">0123456789abcdef</span> &bull; Your IP: <a href="#">Click to reveal</a> &bull; Performance & security by <a href="https://cloudflare.com">Cloudflare</a></p>
+    </div>
+</div>
+</body>
+</html>
